@@ -76,6 +76,12 @@ export default function Contact() {
       value: "aminovy114@gmail.com",
       
     },
+      {
+      icon: <Phone size={18} />,
+      label: "Telefon",
+      value: "+998 99 999 99 99",
+     
+    },
    
     {
       icon: <MapPin size={18} />,
