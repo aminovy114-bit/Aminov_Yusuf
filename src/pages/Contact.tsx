@@ -97,7 +97,7 @@ export default function Contact() {
     },
     {
       label: <FaLinkedin />,
-      href: "www.linkedin.com/in/yusuf-aminov-977b00404",
+      href: "https://www.linkedin.com/in/yusuf-aminov-977b00404/?isSelfProfile=true",
     },
     {
       label: <FaInstagram />,
