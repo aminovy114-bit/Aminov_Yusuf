@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
-import suit from '../assets/suit.jpg';
+import suit from "../assets/suit.jpg";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 export default function Home() {
   const { t } = useTranslation();
-  const roles = t("roles", { returnObjects: true }); // roles array
+
+  const roles = t("roles", {
+    returnObjects: true,
+  }) as string[];
 
   const [text, setText] = useState("");
   const [roleIndex, setRoleIndex] = useState(0);
@@ -15,15 +18,22 @@ export default function Home() {
   const [flipped, setFlipped] = useState(false);
 
   useEffect(() => {
+    if (!roles || roles.length === 0) return;
+
     if (pause) return;
+
     const speed = deleting ? 80 : 150;
+
     const timeout = setTimeout(() => {
       const currentRole = roles[roleIndex];
+
       if (!deleting) {
         setText(currentRole.slice(0, charIndex + 1));
         setCharIndex(charIndex + 1);
+
         if (charIndex + 1 === currentRole.length) {
           setPause(true);
+
           setTimeout(() => {
             setDeleting(true);
             setPause(false);
@@ -32,6 +42,7 @@ export default function Home() {
       } else {
         setText(currentRole.slice(0, charIndex - 1));
         setCharIndex(charIndex - 1);
+
         if (charIndex - 1 === 0) {
           setDeleting(false);
           setRoleIndex((roleIndex + 1) % roles.length);
@@ -57,13 +68,16 @@ export default function Home() {
         <div className="flex-1 text-center md:text-left space-y-6">
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
             {t("hello")} <br />
+
             <span className="text-blue-400">
               {text}
               <span className="inline-block w-[2px] h-7 bg-blue-400 animate-blink ml-1"></span>
             </span>
           </h1>
 
-          <p className="text-gray-300 text-lg max-w-xl">{t("desc")}</p>
+          <p className="text-gray-300 text-lg max-w-xl">
+            {t("desc")}
+          </p>
 
           <div className="flex justify-center md:justify-start gap-4">
             <NavLink
@@ -100,7 +114,10 @@ export default function Home() {
               </div>
 
               <div className="flip-back rounded-2xl">
-                <h3 className="text-xl font-bold mb-2">{t("flipName")}</h3>
+                <h3 className="text-xl font-bold mb-2">
+                  {t("flipName")}
+                </h3>
+
                 <p>{t("flipBirthday")}</p>
                 <p>{t("flipAge")}</p>
                 <p>{t("flipDev")}</p>
@@ -117,6 +134,7 @@ export default function Home() {
           0%, 50%, 100% { opacity: 1; }
           25%, 75% { opacity: 0; }
         }
+
         .animate-blink {
           animation: blink 1s infinite;
         }
