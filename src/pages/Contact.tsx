@@ -1,7 +1,6 @@
 import { useState } from "react";
 import {
   Send,
-  Phone,
   User,
   MessageSquare,
   CheckCircle,
@@ -9,9 +8,7 @@ import {
   Mail,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { FaInstagram } from "react-icons/fa"
-import { FaLinkedin } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import emailjs from "emailjs-com";
 
 export default function Contact() {
@@ -19,7 +16,6 @@ export default function Contact() {
 
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [phoneError, setPhoneError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -29,22 +25,9 @@ export default function Contact() {
       form.elements.namedItem("name") as HTMLInputElement
     ).value.trim();
 
-    const phone = (
-      form.elements.namedItem("phone") as HTMLInputElement
-    ).value.trim();
-
     const message = (
       form.elements.namedItem("message") as HTMLTextAreaElement
     ).value.trim();
-
-    const phoneDigits = phone.replace(/\D/g, "");
-
-    if (phoneDigits.length !== 9) {
-      setPhoneError(t("contact.phoneError"));
-      return;
-    }
-
-    setPhoneError("");
 
     try {
       setLoading(true);
@@ -52,7 +35,7 @@ export default function Contact() {
       await emailjs.send(
         "service_nansmdu",
         "template_sifx5i4",
-        { name, phone, message },
+        { name, message },
         "Vq5E85ulvQfechhyT"
       );
 
@@ -74,15 +57,7 @@ export default function Contact() {
       icon: <Mail size={18} />,
       label: "Email",
       value: "aminovy114@gmail.com",
-      
     },
-      {
-      icon: <Phone size={18} />,
-      label: "Telefon",
-      value: "+998 99 999 99 99",
-     
-    },
-   
     {
       icon: <MapPin size={18} />,
       label: "Manzil",
@@ -142,46 +117,22 @@ export default function Contact() {
 
               <form onSubmit={handleSubmit} className="space-y-8">
 
-                <div className="grid md:grid-cols-2 gap-6">
+                {/* Name */}
+                <div className="relative">
+                  <User
+                    className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+                    size={18}
+                  />
 
-                  <div className="relative">
-                    <User
-                      className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
-                      size={18}
-                    />
-
-                    <input
-                      name="name"
-                      required
-                      placeholder={t("contact.name")}
-                      className="w-full pl-12 pr-4 py-4 rounded-xl bg-black/40 border border-white/10 text-white"
-                    />
-                  </div>
-
-                  <div className="relative">
-                    <Phone
-                      className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
-                      size={18}
-                    />
-
-                    <input
-                      name="phone"
-                      required
-                      placeholder={t("contact.phone")}
-                      className={`w-full pl-12 pr-4 py-4 rounded-xl bg-black/40 border text-white ${phoneError
-                        ? "border-red-500"
-                        : "border-white/10"
-                        }`}
-                    />
-
-                    {phoneError && (
-                      <p className="mt-2 text-sm text-red-400">
-                        {phoneError}
-                      </p>
-                    )}
-                  </div>
+                  <input
+                    name="name"
+                    required
+                    placeholder={t("contact.name")}
+                    className="w-full pl-12 pr-4 py-4 rounded-xl bg-black/40 border border-white/10 text-white"
+                  />
                 </div>
 
+                {/* Message */}
                 <div className="relative">
                   <MessageSquare
                     className="absolute left-4 top-5 text-gray-400"
@@ -197,7 +148,9 @@ export default function Contact() {
                   />
                 </div>
 
+                {/* Send button */}
                 <button
+                  type="submit"
                   disabled={loading}
                   className="w-full flex items-center justify-center gap-3 py-4 rounded-xl bg-blue-500 text-black font-semibold hover:bg-blue-600 transition disabled:opacity-60"
                 >
@@ -210,7 +163,7 @@ export default function Contact() {
               </form>
 
               {/* Kontakt ma'lumotlari */}
-              <div className="grid md:grid-cols-3 gap-6 mt-8 text-white">
+              <div className="grid md:grid-cols-2 gap-6 mt-8 text-white">
                 {contactInfo.map((item, idx) => (
                   <div
                     key={idx}
@@ -218,17 +171,9 @@ export default function Contact() {
                   >
                     {item.icon}
 
-                    {item ? (
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-blue-400 transition-colors"
-                      >
-                        {item.value}
-                      </a>
-                    ) : (
-                      <span>{item}</span>
-                    )}
+                    <span className="hover:text-blue-400 transition-colors">
+                      {item.value}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -268,3 +213,4 @@ export default function Contact() {
     </section>
   );
 }
+
