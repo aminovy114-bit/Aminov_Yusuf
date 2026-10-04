@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import suit from '../assets/suit.jpg'
+import suit from '../assets/suit.jpg';
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -59,7 +59,7 @@ export default function Home() {
             {t("hello")} <br />
             <span className="text-blue-400">
               {text}
-              <span className="inline-block w-1 h-7 bg-blue-400 animate-blink ml-1"></span>
+              <span className="inline-block w-[2px] h-7 bg-blue-400 animate-blink ml-1"></span>
             </span>
           </h1>
 
@@ -95,7 +95,7 @@ export default function Home() {
                 <img
                   src={suit}
                   alt={t("flipName")}
-                  className="w-90 md:w-96 rounded-2xl drop-shadow-[0_25px_35px_rgba(0,0,0,0.6)] cursor-pointer"
+                  className="w-[288px] md:w-96 rounded-2xl drop-shadow-[0_25px_35px_rgba(0,0,0,0.6)] cursor-pointer"
                 />
               </div>
 
