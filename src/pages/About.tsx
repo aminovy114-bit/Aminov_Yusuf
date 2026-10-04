@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import yusuf from "../assets/yusuff.jpg";
+import yusuf from "../assets/yusuf.jpg";
 import { PenTool, Code2, Sparkles, GraduationCap, User, Calendar, Briefcase, School } from "lucide-react";
 
 export default function About() {
