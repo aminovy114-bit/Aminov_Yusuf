@@ -76,12 +76,7 @@ export default function Contact() {
       value: "aminovy114@gmail.com",
       
     },
-    {
-      icon: <Phone size={18} />,
-      label: "Telefon",
-      value: "+998 77 048 69 81",
-     
-    },
+   
     {
       icon: <MapPin size={18} />,
       label: "Manzil",
