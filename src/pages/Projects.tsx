@@ -8,7 +8,7 @@ import Rockpaper from "../assets/rockpaperskissor.png";
 import Statisda from "../assets/statisda.png";
 import Testify from "../assets/testtify.png";
 import Laptop from "../assets/laptop.png";
-import ProfileImg from "../assets/profile.jpg";
+import ProfileImg from "../assets/yusuf.jpg";
 
 interface Project {
   title: string;
@@ -34,7 +34,7 @@ const Projects = () => {
 
   const projectsData = t("projects", {
     returnObjects: true,
-  }) as Project[];
+  }) as unknown as Project[];
 
   const stats: Stat[] = [
     { label: t("stats.real"), value: 5 },
@@ -45,8 +45,10 @@ const Projects = () => {
   return (
     <section className="py-16 rounded-3xl bg-[#0f172a] overflow-hidden">
       <div className="container mx-auto px-4">
+
         {/* Profile + Statistics */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-12 mb-20 bg-[#1e293b]/50 p-8 rounded-3xl border border-gray-700 backdrop-blur-sm">
+
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-[#facc15] to-orange-500 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
 
