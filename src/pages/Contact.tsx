@@ -51,21 +51,17 @@ export default function Contact() {
     }
   };
 
-  // Kontakt ma'lumotlari
   const contactInfo = [
     {
       icon: <Mail size={18} />,
-      label: "Email",
       value: "aminovy114@gmail.com",
     },
     {
       icon: <MapPin size={18} />,
-      label: "Manzil",
       value: "Samarqand, O'zbekiston",
     },
   ];
 
-  // Ijtimoiy tarmoqlar
   const socialLinks = [
     {
       label: <FaGithub />,
@@ -162,8 +158,8 @@ export default function Contact() {
                 </button>
               </form>
 
-              {/* Kontakt ma'lumotlari */}
-              <div className="grid md:grid-cols-2 gap-6 mt-8 text-white">
+              {/* Email va Manzil */}
+              <div className="flex justify-between items-center mt-8 text-white w-full">
                 {contactInfo.map((item, idx) => (
                   <div
                     key={idx}
@@ -213,4 +209,3 @@ export default function Contact() {
     </section>
   );
 }
-
