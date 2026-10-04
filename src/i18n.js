@@ -47,7 +47,7 @@ i18n.use(initReactI18next).init({
 
         hello: "Hello! I'm",
         roles: ["Developer", "Designer", "Creator", "Blogger"],
-        desc: "Frontend developer and designer. I create modern, fast and user-friendly websites. Currently studying at Ilmla IT Center.",
+        desc: "Frontend developer and designer. I create modern, fast and user-friendly websites. Currently studying at Polyglot International School",
         aboutBtn: "About me",
         projectsBtn: "My Projects",
         flipName: "Yusuf Aminov",
@@ -72,7 +72,7 @@ i18n.use(initReactI18next).init({
             name: "Yusuf Aminov",
             birth: "2010",
             profession: "Frontend Developer & Designer",
-            education: "Ilmla IT Center"
+            education: "Polyglot International School"
           },
           roles: [
             {
@@ -89,7 +89,7 @@ i18n.use(initReactI18next).init({
             },
             {
               title: "Student",
-              desc: "Studying at Ilmla IT Center and constantly improving my skills."
+              desc: "Studying at Polyglot International School and constantly improving my skills."
             }
           ]
         },
@@ -174,7 +174,7 @@ i18n.use(initReactI18next).init({
 
         hello: "Salom! Men",
         roles: ["Dasturchi", "Designer", "Ijodkor", "Bloger"],
-        desc: "Frontend dasturchi va dizayner. Zamonaviy, tezkor va foydalanuvchi uchun qulay web-saytlar yarataman. Hozirda Ilmla IT markazida o‘qiyman.",
+        desc: "Frontend dasturchi va dizayner. Zamonaviy, tezkor va foydalanuvchi uchun qulay web-saytlar yarataman. Hozirda Polyglot Xalqaro maktabida o‘qiyman.",
         aboutBtn: "Men haqimda",
         projectsBtn: "Loyihalarim",
         flipName: "Aminov Yusuf",
@@ -200,7 +200,7 @@ i18n.use(initReactI18next).init({
             name: "Yusuf Aminov",
             birth: "2010",
             profession: "Frontend Dasturchi & Dizayner",
-            education: "Ilmla IT markazi"
+            education: "Polyglot Xalqaro Maktabi"
           },
           roles: [
             {
@@ -217,7 +217,7 @@ i18n.use(initReactI18next).init({
             },
             {
               title: "Talaba",
-              desc: "Ilmla IT markazida tahsil olib, doimiy ravishda bilimimni oshiraman."
+              desc: "Polyglot Xalqaro Maktabida tahsil olib, doimiy ravishda bilimimni oshiraman."
             }
           ]
         },
@@ -300,7 +300,7 @@ i18n.use(initReactI18next).init({
 
         hello: "Привет! Я",
         roles: ["Разработчик", "Дизайнер", "Творец", "Блогер"],
-        desc: "Фронтенд разработчик и дизайнер. Создаю современные, быстрые и удобные для пользователя сайты. Сейчас учусь в IT центре Ilmla.",
+        desc: "Фронтенд разработчик и дизайнер. Создаю современные, быстрые и удобные для пользователя сайты. Сейчас учусь в Международная школа Polyglot",
         aboutBtn: "Обо мне",
         projectsBtn: "Мои проекты",
         flipName: "Юсуф Аминов",
@@ -326,7 +326,7 @@ i18n.use(initReactI18next).init({
             name: "Юсуф Аминов",
             birth: "2010",
             profession: "Frontend разработчик & дизайнер",
-            education: "IT центр Ilmla"
+            education: "Международная школа Polyglot"
           },
           roles: [
             {
@@ -343,7 +343,7 @@ i18n.use(initReactI18next).init({
             },
             {
               title: "Студент",
-              desc: "Учусь в IT центре Ilmla и постоянно повышаю свои навыки."
+              desc: "Учусь в Международная школа Polyglot и постоянно повышаю свои навыки."
             }
           ]
         },
